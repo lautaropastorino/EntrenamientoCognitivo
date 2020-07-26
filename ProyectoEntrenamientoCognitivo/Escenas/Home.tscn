@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Fonts/Roboto/Roboto-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/LogoCDEU.png" type="Texture" id=2]
+[ext_resource path="res://Escenas/Home.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Fonts/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 5 )
+
+[node name="Home" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TituloLabel" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -476.0
+margin_top = 88.0
+margin_right = -27.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 1 )
+text = "Entrenamiento Cognitivo"
+
+[node name="LogoTexture" type="TextureRect" parent="Control"]
+margin_left = 768.0
+margin_top = 88.0
+margin_right = 1459.0
+margin_bottom = 922.0
+rect_scale = Vector2( 0.36, 0.36 )
+texture = ExtResource( 2 )
+
+[node name="NuevoCircuitoButton" type="Button" parent="Control"]
+margin_left = 64.0
+margin_top = 280.0
+margin_right = 276.0
+margin_bottom = 322.0
+custom_fonts/font = SubResource( 2 )
+text = "Nuevo Circuito"
+
+[node name="SalirButton" type="Button" parent="Control"]
+margin_left = 64.0
+margin_top = 600.0
+margin_right = 137.0
+margin_bottom = 642.0
+custom_fonts/font = SubResource( 3 )
+text = "Salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditosLabel" type="Label" parent="Control"]
+margin_left = 768.0
+margin_top = 680.0
+margin_right = 1059.0
+margin_bottom = 704.0
+custom_fonts/font = SubResource( 4 )
+text = "Realizado por: Lautaro Pastorino"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/NuevoCircuitoButton" to="." method="_on_NuevoCircuitoButton_pressed"]
+[connection signal="pressed" from="Control/SalirButton" to="." method="_on_SalirButton_pressed"]

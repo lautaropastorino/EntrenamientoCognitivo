@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Roboto/Roboto-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Escenas/NuevoCircuito.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="NuevoCircuito" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TituloLabel" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -134.5
+margin_top = 80.0
+margin_right = 134.5
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 1 )
+text = "Nuevo Circuito"
+align = 1
+
+[node name="SeleccionarImagenes" type="Label" parent="Control"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 553.0
+margin_bottom = 228.0
+custom_fonts/font = SubResource( 2 )
+text = "Seleccionar imágenes participantes:"
+
+[node name="imagenesGrid" type="GridContainer" parent="Control"]
+margin_left = 64.0
+margin_top = 256.0
+margin_right = 104.0
+margin_bottom = 296.0
+rect_scale = Vector2( 23.758, 6.30411 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
