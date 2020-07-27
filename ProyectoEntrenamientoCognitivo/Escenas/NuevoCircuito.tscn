@@ -38,18 +38,11 @@ __meta__ = {
 
 [node name="SeleccionarImagenes" type="Label" parent="Control"]
 margin_left = 64.0
-margin_top = 136.0
+margin_top = 88.0
 margin_right = 553.0
-margin_bottom = 172.0
+margin_bottom = 124.0
 custom_fonts/font = SubResource( 2 )
 text = "Seleccionar imágenes participantes:"
-
-[node name="imagenesGrid" type="GridContainer" parent="Control"]
-margin_left = 64.0
-margin_top = 200.0
-margin_right = 104.0
-margin_bottom = 240.0
-rect_scale = Vector2( 23.758, 9.50411 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
