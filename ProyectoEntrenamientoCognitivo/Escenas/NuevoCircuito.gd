@@ -1,20 +1,34 @@
 extends Node
 
-var files = []
+var colores = []
+var flechas = []
+var palabras = []
+var numeros = []
 onready var grid = $Control/imagenesGrid
 
 func _ready():
 	#Obtengo todas las imagenes posibles
-	files = list_files_in_directory("res://Assets/ImagenesEntrenamiento")
+	colores = list_files_in_directory("res://Assets/ImagenesEntrenamiento/Colores")
+	flechas = list_files_in_directory("res://Assets/ImagenesEntrenamiento/Flechas")
+	palabras = list_files_in_directory("res://Assets/ImagenesEntrenamiento/PalabrasEnColores")
+	numeros = list_files_in_directory("res://Assets/ImagenesEntrenamiento/Numeros")
 	
-	grid.set_columns(8)
+	var imagenes_totales = {"Colores": colores, "Flechas": flechas, "PalabrasEnColores": palabras, "Numeros": numeros}
 	
-	for f in files:
-		var texture = TextureRect.new()
-		var imagen = load("res://Assets/ImagenesEntrenamiento/" + f)
-		texture.set_texture(imagen)
-		#texture.texture.set_height(30)# = Vector2(30,30)
-		grid.add_child(texture)
+	grid.set_columns(6)
+	
+	for i in imagenes_totales:
+		for f in imagenes_totales[i]:
+			var textureRect = TextureRect.new()
+			var imagen = load("res://Assets/ImagenesEntrenamiento/" + i + "/" + f)
+			textureRect.set_texture(imagen)
+			textureRect.rect_size = imagen.get_size()
+			textureRect.expand = true
+			textureRect.set_stretch_mode(5)
+			print("Antes: " + str(textureRect.rect_min_size))
+			textureRect.rect_min_size = textureRect.rect_size * Vector2(.008, .008)
+			print("Después: " + str(textureRect.rect_min_size))
+			grid.add_child(textureRect)
 		
 	
 func list_files_in_directory(path):
