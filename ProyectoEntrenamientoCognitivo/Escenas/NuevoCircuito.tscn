@@ -25,10 +25,10 @@ __meta__ = {
 [node name="TituloLabel" type="Label" parent="Control"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -134.5
-margin_top = 16.0
-margin_right = 134.5
-margin_bottom = 64.0
+margin_left = -140.0
+margin_top = 8.0
+margin_right = 129.0
+margin_bottom = 56.0
 custom_fonts/font = SubResource( 1 )
 text = "Nuevo Circuito"
 align = 1
@@ -38,11 +38,93 @@ __meta__ = {
 
 [node name="SeleccionarImagenes" type="Label" parent="Control"]
 margin_left = 64.0
-margin_top = 88.0
+margin_top = 64.0
 margin_right = 553.0
-margin_bottom = 124.0
+margin_bottom = 100.0
 custom_fonts/font = SubResource( 2 )
 text = "Seleccionar imágenes participantes:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_left = 64.0
+margin_top = 104.0
+margin_right = 1016.0
+margin_bottom = 544.0
+custom_constants/separation = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+margin_left = 64.0
+margin_top = 640.0
+margin_right = 1024.0
+margin_bottom = 704.0
+custom_constants/separation = 27
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+margin_right = 254.0
+margin_bottom = 64.0
+
+[node name="DuracionTotalLabel" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+margin_right = 254.0
+margin_bottom = 14.0
+text = "Duración total del ejercicio (segundos): "
+
+[node name="DuracionTotal" type="LineEdit" parent="Control/HBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 250.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/HBoxContainer"]
+margin_left = 281.0
+margin_right = 581.0
+margin_bottom = 64.0
+
+[node name="DuracionEnPantallaLabel" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+margin_right = 300.0
+margin_bottom = 14.0
+text = "Duración de imágenes en pantalla (segundos): "
+
+[node name="DuracionEnPantalla" type="LineEdit" parent="Control/HBoxContainer/VBoxContainer2"]
+margin_top = 18.0
+margin_right = 300.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/HBoxContainer"]
+margin_left = 608.0
+margin_right = 841.0
+margin_bottom = 64.0
+
+[node name="DuracionEntreImagenesLabel" type="Label" parent="Control/HBoxContainer/VBoxContainer3"]
+margin_right = 233.0
+margin_bottom = 14.0
+text = "Tiempo entre imágenes (segundos): "
+
+[node name="DuracionEntreImagenes" type="LineEdit" parent="Control/HBoxContainer/VBoxContainer3"]
+margin_top = 18.0
+margin_right = 230.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 230, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="EmpezarButton" type="Button" parent="Control/HBoxContainer"]
+margin_left = 868.0
+margin_right = 968.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Empezar"
